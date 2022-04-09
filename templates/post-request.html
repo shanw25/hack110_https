@@ -98,7 +98,7 @@
           <div class="row g-3">
             <div class="col-sm-6">
               <label for="firstName" class="form-label">First name</label>
-              <input type="text" class="form-control" id="firstName" placeholder="First Name" value="" required>
+              <input type="text" class="form-control" id="firstName" placeholder="First Name" value="" name="first_name"required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
@@ -106,7 +106,7 @@
 
             <div class="col-sm-6">
               <label for="lastName" class="form-label">Last name</label>
-              <input type="text" class="form-control" id="lastName" placeholder="Last Name" value="" required>
+              <input type="text" class="form-control" id="lastName" placeholder="Last Name" value="" name="last_name" required>
               <div class="invalid-feedback">
                 Valid last name is required.
               </div>
@@ -116,7 +116,7 @@
               <label for="title" class="form-label">Title</label>
               <div class="input-group has-validation">
                 <!-- <span class="input-group-text">@</span> -->
-                <input type="text" class="form-control" id="title" placeholder="A short title of the event" required>
+                <input type="text" class="form-control" id="title" placeholder="A short title of the event" name="title" required>
               <div class="invalid-feedback">
                   A title is required.
                 </div>
@@ -133,7 +133,7 @@
 
             <div class="col-12">
               <label for="address" class="form-label">Description</label>
-              <input type="text" class="form-control" id="description" placeholder="Make your event attractive for others!" required>
+              <input type="text" class="form-control" id="description" placeholder="Make your event attractive for others!" name="description" required>
               <div class="invalid-feedback">
                 Please tell us what you wanted to do!
               </div>
@@ -141,13 +141,13 @@
 
             <div class="col-12">
               <label for="locaion" class="form-label">Location<span class="text-muted"></span></label>
-              <input type="text" class="form-control" id="location" placeholder="Place where you are hosting the event">
+              <input type="text" class="form-control" id="location" placeholder="Place where you are hosting the event" name="location">
             </div>
 
             <!-- activity types -->
             <div class="col-md-5">
               <label for="tag" class="form-label">Tag</label>
-              <select class="form-select" id="tag" required>
+              <select class="form-select" id="tag" name="tag" required>
                 <option value="">Choose...</option>
                 <option value="study">Study</option>
                 <option value="exercise">Exercise</option>
@@ -175,7 +175,7 @@
 
             <div class="col-md-3">
               <label for="participants" class="form-label">Number of participants</label>
-              <input type="number" class="form-control" id="participants" value="0" min="0" required>
+              <input type="number" class="form-control" id="participants" value="0" min="0" name="number" required>
               <div class="invalid-feedback">
                 Number of participants is required.
               </div>

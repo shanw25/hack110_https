@@ -1,3 +1,4 @@
+from random import randint
 from flask import Flask, render_template, request
 from utility.helpers import todo
 
@@ -14,8 +15,9 @@ def index():
 def create_todo():
     if request.method == "POST":
         global todo_list
-        global todo_count
+        # global todo_count
 
+        id: int = randint(0, 999)
         title: str = request.form['title']
         description: str = request.form['description']
         time: str = request.form['time']
@@ -23,11 +25,15 @@ def create_todo():
         number: int = request.form['number']
         tag: str = request.form['tag']
         tag  = "\"#" + tag + "\""
+        host: str = "" # get and User()
+        participants: list[str] = [] # a list of User()
+
+
         if title == '':
             return render_template("create-todo.html")
 
-        new_todo: todo = todo(todo_count, title, description, time, location, number, tag)
-        todo_list.append(new_todo)
+        new_event: todo = todo(id, title, description, time, location, number, tag, host, participants)
+        todo_list.append(new_event)
 
         todo_count += 1
 
