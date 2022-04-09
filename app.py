@@ -15,7 +15,7 @@ def index():
 def create_todo():
     if request.method == "POST":
         global todo_list
-        # global todo_count
+        global todo_count
 
         id: int = randint(0, 999)
         title: str = request.form['title']
@@ -36,7 +36,7 @@ def create_todo():
         todo_list.append(new_event)
 
         todo_count += 1
-
+        print(len(todo_list))
         return render_template("success.html", title=title, description=description, time=time, location=location, number=number, tag=tag)
     return render_template("post-request.html")
 
