@@ -12,22 +12,25 @@ def index():
 
 @app.route('/post-request', methods=["GET", "POST"])
 def create_todo():
-    # if request.method == "POST":
-    #     global todo_list
-    #     global todo_count
+    if request.method == "POST":
+        global todo_list
+        global todo_count
 
-    #     title: str = request.form['title']
-    #     description: str = request.form['description']
+        title: str = request.form['title']
+        description: str = request.form['description']
+        time: str = request.form['time']
+        location: str = request.form['location']
+        number: int = request.form['number']
 
-    #     if title == '':
-    #         return render_template("create-todo.html")
+        if title == '':
+            return render_template("create-todo.html")
 
-    #     new_todo: todo = todo(todo_count, title, description)
-    #     todo_list.append(new_todo)
+        new_todo: todo = todo(todo_count, title, description, time, location, number)
+        todo_list.append(new_todo)
 
-    #     todo_count += 1
+        todo_count += 1
 
-    #     return render_template("success.html", title=title, description=description)
+        return render_template("success.html", title=title, description=description, time=time, location=location, number=number)
     return render_template("post-request.html")
 
 

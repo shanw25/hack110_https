@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>View List!</title>
+    </head>
+    <body>
+        <h2>Todo List</h2>
+        {% for todo in todo_list %}
+            <br/>
+            <h4>{{todo.title}}</h4>
+            <p>{{todo.description}}</p>
+            <p>{{todo.time}}</p>
+            <p>{{todo.location}}</p>
+            <p>{{todo.number}}</p>
+        {% endfor %}
+    </body>
+</html>
