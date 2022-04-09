@@ -77,6 +77,7 @@ def join():
     if (current_user.name == todo_list[current_id].host) or (current_user in todo_list[current_id].participants):
         return render_template("join-fail.html")
     todo_list[current_id].participants.append(current_user)
+    todo_list[current_id].participant_count = len(todo_list[current_id].participants)
     return redirect('/')
 
 if __name__ == '__main__':
