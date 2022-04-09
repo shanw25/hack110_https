@@ -22,7 +22,7 @@ def create_todo():
         location: str = request.form['location']
         number: int = request.form['number']
         tag: str = request.form['tag']
-
+        tag  = "\"#" + tag + "\""
         if title == '':
             return render_template("create-todo.html")
 
