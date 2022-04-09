@@ -21,3 +21,11 @@ class todo:
         self.tag = tag
         self.host = host
         self.participants = participants
+
+class User:
+    id: int
+    name: str
+
+    def __init__(self, id: int, name: str):
+        self.id = id
+        self.name = name
