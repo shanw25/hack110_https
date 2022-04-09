@@ -8,18 +8,21 @@ todo_list: list[todo] = []
 todo_count: int = 0
 user_count: int = 0
 current_user: User = None
+users: list[User]
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/", methods=["GET", "POST", "UPDATE"])
 def index():
     if request.method == "POST":
         global current_user
-        
+        global user
+
         id: int = user_count
         name: str = request.form['name']
         if name == "":
             return render_template('login.html')
 
         current_user = User(id, name)
+        users.append(current_user)
     if current_user == None:
         return render_template('login.html')
     return render_template('index.html', todo_list=todo_list)
