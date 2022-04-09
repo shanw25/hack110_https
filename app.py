@@ -69,17 +69,6 @@ def log_out():
     current_user = None
     return redirect('/')
 
-
-@app.route("/join", methods=["POST"])
-def join():
-    global current_user
-    current_id = request.form('id')
-    if (current_user.name == todo_list[current_id].host) or (current_user in todo_list[current_id].participants):
-        return render_template("join-fail.html")
-    todo_list[current_id].participants.append(current_user)
-    todo_list[current_id].participant_count = len(todo_list[current_id].participants)
-    return redirect('/')
-
 if __name__ == '__main__':
     app.run(debug=True)
 
