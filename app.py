@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
-from helpers import todo
+from utility.helpers import todo
+
 
 app: Flask = Flask(__name__)
 todo_list: list[todo] = []
