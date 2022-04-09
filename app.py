@@ -21,16 +21,17 @@ def create_todo():
         time: str = request.form['time']
         location: str = request.form['location']
         number: int = request.form['number']
+        tag: str = request.form['tag']
 
         if title == '':
             return render_template("create-todo.html")
 
-        new_todo: todo = todo(todo_count, title, description, time, location, number)
+        new_todo: todo = todo(todo_count, title, description, time, location, number, tag)
         todo_list.append(new_todo)
 
         todo_count += 1
 
-        return render_template("success.html", title=title, description=description, time=time, location=location, number=number)
+        return render_template("success.html", title=title, description=description, time=time, location=location, number=number, tag=tag)
     return render_template("post-request.html")
 
 
