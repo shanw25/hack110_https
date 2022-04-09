@@ -9,7 +9,6 @@ todo_count: int = 0
 
 @app.route("/")
 def index():
-    print(len(todo_list))
     return render_template('index.html', todo_list=todo_list)
 
 @app.route('/post-request', methods=["GET", "POST"])
@@ -37,7 +36,7 @@ def create_todo():
         todo_list.append(new_event)
 
         todo_count += 1
-        print(len(todo_list))
+        # print(len(todo_list))
         return redirect('/')
     return render_template("post-request.html")
 
