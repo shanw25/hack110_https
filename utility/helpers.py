@@ -6,10 +6,12 @@ class todo:
     location: str
     number: int
     tag: str
-    participants: list[str]
+    # study, exercise, food, travel, chat, date
+    host: str # TODO: User()
+    participants: list[str] # TODO: list[User]
     
 
-    def __init__(self, id: int, title: str, description: str, time: str, location: str, number: int, tag: str, participants: list[str] = []):
+    def __init__(self, id: int, title: str, description: str, time: str, location: str, number: int, tag: str, host: str = "", participants: list[str] = []):
         self.id = id
         self.title = title
         self.description = description
@@ -17,4 +19,5 @@ class todo:
         self.location = location
         self.number = number
         self.tag = tag
+        self.host = host
         self.participants = participants
