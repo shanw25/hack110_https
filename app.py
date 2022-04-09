@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from helpers import todo
+from utility.helpers import todo
 
 app: Flask = Flask(__name__)
 todo_list: list[todo] = []
@@ -8,7 +8,7 @@ todo_count: int = 0
 @app.route("/")
 def index():
     return render_template('index.html')
-
+    
 @app.route('/create-todo', methods=["GET", "POST"])
 def create_todo():
     if request.method == "POST":
