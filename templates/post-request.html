@@ -39,9 +39,9 @@
     
 <div class="container">
   <main>
-    <div class="py-5 text-center">
-      <h2>Checkout form</h2>
-      <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+    <div class="pt-5 pb-3 text-center">
+      <h2>Event Host Form</h2>
+      <p class="lead">Please provide the necessary information to host your event.</p>
     </div>
 
     <div class="row g-5">
@@ -93,12 +93,12 @@
         </form>
       </div> -->
       <div class="col-md-12 col-lg-12">
-        <h4 class="mb-3">Basic Information</h4>
+        <!-- <h4 class="mb-3">Basic Information</h4> -->
         <form class="needs-validation" novalidate>
           <div class="row g-3">
             <div class="col-sm-6">
               <label for="firstName" class="form-label">First name</label>
-              <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+              <input type="text" class="form-control" id="firstName" placeholder="First Name" value="" required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
@@ -106,7 +106,7 @@
 
             <div class="col-sm-6">
               <label for="lastName" class="form-label">Last name</label>
-              <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+              <input type="text" class="form-control" id="lastName" placeholder="Last Name" value="" required>
               <div class="invalid-feedback">
                 Valid last name is required.
               </div>
@@ -144,21 +144,25 @@
               <input type="text" class="form-control" id="location" placeholder="Place where you are hosting the event">
             </div>
 
+            <!-- activity types -->
             <div class="col-md-5">
-              <label for="tag" class="form-label">Country</label>
-              <select class="form-select" id="Tag" required>
+              <label for="tag" class="form-label">Tag</label>
+              <select class="form-select" id="tag" required>
                 <option value="">Choose...</option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
+                <option value="study">Study</option>
+                <option value="exercise">Exercise</option>
+                <option value="food">Food</option>
+                <option value="travel">Travel</option>
+                <option value="chat">Chat</option>
+                <option value="date">Date</option>
+                <option value="gaming">Gaming</option>
               </select>
               <div class="invalid-feedback">
-                Please select a valid country.
+                Please select a tag.
               </div>
             </div>
 
-            <div class="col-md-4">
+            <!-- <div class="col-md-4">
               <label for="state" class="form-label">State</label>
               <select class="form-select" id="state" required>
                 <option value="">Choose...</option>
@@ -167,18 +171,18 @@
               <div class="invalid-feedback">
                 Please provide a valid state.
               </div>
-            </div>
+            </div> -->
 
             <div class="col-md-3">
-              <label for="zip" class="form-label">Zip</label>
-              <input type="text" class="form-control" id="zip" placeholder="" required>
+              <label for="participants" class="form-label">Number of participants</label>
+              <input type="number" class="form-control" id="participants" value="0" min="0" required>
               <div class="invalid-feedback">
-                Zip code required.
+                Number of participants is required.
               </div>
             </div>
           </div>
 
-          <hr class="my-4">
+          <!-- <hr class="my-4">
 
           <div class="form-check">
             <input type="checkbox" class="form-check-input" id="same-address">
@@ -242,7 +246,7 @@
                 Security code required
               </div>
             </div>
-          </div>
+          </div> -->
 
           <hr class="my-4">
 
@@ -252,14 +256,14 @@
     </div>
   </main>
 
-  <footer class="my-5 pt-5 text-muted text-center text-small">
+  <!-- <footer class="my-5 pt-5 text-muted text-center text-small">
     <p class="mb-1">&copy; 2017–2021 Company Name</p>
     <ul class="list-inline">
       <li class="list-inline-item"><a href="#">Privacy</a></li>
       <li class="list-inline-item"><a href="#">Terms</a></li>
       <li class="list-inline-item"><a href="#">Support</a></li>
     </ul>
-  </footer>
+  </footer> -->
 </div>
 
 
