@@ -1,14 +1,27 @@
 from random import randint
 from flask import Flask, render_template, request, redirect
-from utility.helpers import todo
+from utility.helpers import todo, User
 
 
 app: Flask = Flask(__name__)
 todo_list: list[todo] = []
 todo_count: int = 0
+user_count: int = 0
+current_user: User = None
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def index():
+    if request.method == "POST":
+        global current_user
+        
+        id: int = user_count
+        name: str = request.form['name']
+        if name == "":
+            return render_template('login.html')
+
+        current_user = User(id, name)
+    if current_user == None:
+        return render_template('login.html')
     return render_template('index.html', todo_list=todo_list)
 
 @app.route('/post-request', methods=["GET", "POST"])
@@ -17,7 +30,7 @@ def create_todo():
         global todo_list
         global todo_count
 
-        id: int = randint(0, 999)
+        id: int = todo_count
         title: str = request.form['title']
         description: str = request.form['description']
         time: str = request.form['time']
@@ -25,8 +38,8 @@ def create_todo():
         number: int = request.form['number']
         tag: str = request.form['tag']
         tag  = "#" + tag
-        host: str = "" # get and User()
-        participants: list[str] = [] # a list of User()
+        host = current_user
+        participants: list[User] = [] # a list of User()
 
 
         if title == '':

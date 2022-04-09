@@ -1,3 +1,11 @@
+class User:
+    id: int
+    name: str
+
+    def __init__(self, id: int, name: str):
+        self.id = id
+        self.name = name
+
 class todo:
     id: int
     title: str
@@ -7,8 +15,8 @@ class todo:
     number: int
     tag: str
     # study, exercise, food, travel, chat, date, gaming
-    host: str # TODO: User()
-    participants: list[str] # TODO: list[User]
+    host: User
+    participants: list[User]
     
 
     def __init__(self, id: int, title: str, description: str, time: str, location: str, number: int, tag: str = "#study", host: str = "", participants: list[str] = []):
@@ -21,11 +29,3 @@ class todo:
         self.tag = tag
         self.host = host
         self.participants = participants
-
-class User:
-    id: int
-    name: str
-
-    def __init__(self, id: int, name: str):
-        self.id = id
-        self.name = name
