@@ -1,5 +1,5 @@
 from random import randint
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from utility.helpers import todo
 
 
@@ -36,8 +36,8 @@ def create_todo():
         todo_list.append(new_event)
 
         todo_count += 1
-        print(len(todo_list))
-        return render_template("success.html", title=title, description=description, time=time, location=location, number=number, tag=tag)
+        # print(len(todo_list))
+        return redirect('/')
     return render_template("post-request.html")
 
 
