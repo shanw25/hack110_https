@@ -24,7 +24,7 @@ def create_todo():
         location: str = request.form['location']
         number: int = request.form['number']
         tag: str = request.form['tag']
-        tag  = "\"#" + tag + "\""
+        tag  = "#" + tag
         host: str = "" # get and User()
         participants: list[str] = [] # a list of User()
 
