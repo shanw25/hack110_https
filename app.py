@@ -8,7 +8,7 @@ todo_count: int = 0
 
 @app.route("/")
 def index():
-    return render_template('index.html')
+    return render_template('index.html', todo_list=todo_list)
 
 @app.route('/post-request', methods=["GET", "POST"])
 def create_todo():
