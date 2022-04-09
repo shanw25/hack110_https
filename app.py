@@ -8,9 +8,9 @@ todo_list: list[todo] = []
 todo_count: int = 0
 user_count: int = 0
 current_user: User = None
-users: list[User]
+users: list[User] = []
 
-@app.route("/", methods=["GET", "POST", "UPDATE"])
+@app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
         global current_user
@@ -60,6 +60,14 @@ def create_todo():
 @app.route('/view-todo-list')
 def view_todo_list():
     return render_template('view-list.html', todo_list=todo_list)
+
+
+@app.route("/log-out", methods=["GET"])
+def log_out():
+    global current_user
+
+    current_user = None
+    return redirect('/')
 
 if __name__ == '__main__':
     app.run(debug=True)
