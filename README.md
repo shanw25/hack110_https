@@ -1,4 +1,5 @@
-# hack110_Activity_Posting_And_Joining_Platform_Prototype
+# Hack110_Project
+
 ## Install dependencies
 ```
 pip install app
